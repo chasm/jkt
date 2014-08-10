@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Challenge 3</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <main class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <table id="usersapp" class="table table-striped">
+            <caption>Users</caption>
+            <thead id="users-form"></thead>
+            <tbody id="users-list"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <script type="text/template" id="user-form-template">
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>&nbsp;</th>
+      </tr>
+      <tr class="form-group">
+        <td>
+          <input type="text" id="name-first" name="nameFirst"
+            class="form-control" placeholder="First">
+        </td>
+        <td>
+          <input type="text" id="name-last" name="nameLast"
+            class="form-control" placeholder="Last">
+        </td>
+        <td>
+          <input type="text" id="email" name="email"
+            class="form-control" placeholder="Email address">
+        </td>
+        <td>
+          <input type="submit" id="user-submit" value="add"
+            class="btn btn-warning btn-sm">
+          <input type="submit" id="user-clear" value="clear"
+            class="btn btn-warning btn-sm">
+        </td>
+      </tr>
+    </script>
+
+    <script type="text/template" id="user-template">
+      <td><%- nameFirst %></td>
+      <td><%- nameLast %></td>
+      <td><%- email %></td>
+      <td>
+        <input type="submit" value="edit" class="user-edit btn btn-success btn-sm">
+        <input type="submit" value="del" class="user-delete btn btn-danger btn-sm">
+      </td>
+		</script>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/underscore.js"></script>
+    <script src="/js/backbone.js"></script>
+    <script src="/js/backbone.localStorage.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/models/user.js"></script>
+    <script src="/js/collections/users.js"></script>
+    <script src="/js/views/user.js"></script>
+    <script src="/js/views/user-form.js"></script>
+    <script src="/js/views/users.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>
